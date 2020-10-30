@@ -3680,3 +3680,11 @@ color:#E95C6C; transition:color 1s;
 .view-more:hover {
     color: #2FA732;
 }
+
+.user-config-danger-zone {
+    display: none;
+}
+
+.routename-user-settings .user-config-danger-zone {
+    display: block;
+}
