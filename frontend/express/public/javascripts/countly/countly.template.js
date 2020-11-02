@@ -1142,8 +1142,14 @@ var AppRouter = Backbone.Router.extend({
                 if (!selectedMenu.length) {
                     var parts = Backbone.history.fragment.split("/");
                     selectedMenu = $($("#sidebar-menu").find("a[href='#/" + (parts[1] || "") + "']"));
-                    if (!selectedMenu.length) {
+                    if (!selectedMenu.length && parts.length === 4) {
                         selectedMenu = $($("#sidebar-menu").find("a[href='#/" + (parts[1] + "/" + parts[2] || "") + "']"));
+                    }
+                    if (!selectedMenu.length && parts.length === 5) {
+                        selectedMenu = $($("#sidebar-menu").find("a[href='#/" + (parts[1] + "/" + parts[2] + "/" + parts[3] || "") + "']"));
+                    }
+                    if (!selectedMenu.length && parts.length === 6) {
+                        selectedMenu = $($("#sidebar-menu").find("a[href='#/" + (parts[1] + "/" + parts[2] + "/" + parts[3] + "/" + parts[4] || "") + "']"));
                     }
                 }
 
